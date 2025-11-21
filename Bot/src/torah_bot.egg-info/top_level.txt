@@ -1,0 +1,8 @@
+config
+core
+database
+images
+mini_game
+newsletter_api
+torah_bot
+utils
