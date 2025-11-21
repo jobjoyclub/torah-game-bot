@@ -1,0 +1,21 @@
+{
+  "name": "shabbat-runner-mini-app",
+  "version": "1.0.0",
+  "description": "Shabbat Runner: Kedusha Path - Telegram Mini App",
+  "main": "dist/main.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "vitest"
+  },
+  "dependencies": {
+    "@telegram-apps/sdk": "^1.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0",
+    "vite": "^5.0.0",
+    "vitest": "^1.0.0",
+    "@types/node": "^20.0.0"
+  }
+}

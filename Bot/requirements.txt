@@ -1,0 +1,30 @@
+# Torah Bot - Python Dependencies
+# Python 3.11+
+
+# Core Framework
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
+python-dotenv==1.0.0
+
+# Database
+asyncpg==0.29.0
+psycopg2-binary==2.9.9
+
+# HTTP Client
+httpx==0.25.2
+
+# AI & OpenAI
+openai==1.3.7
+
+# Utilities
+python-dateutil==2.8.2
+schedule==1.2.0
+
+# Testing
+pytest==7.4.3
+pytest-asyncio==0.21.1
+
+# Optional: Development Tools
+# black==23.11.0
+# mypy==1.7.1
+# ruff==0.1.6

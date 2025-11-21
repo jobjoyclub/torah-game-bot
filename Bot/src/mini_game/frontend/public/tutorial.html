@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutorial - Shabbat Runner: Kedusha Path</title>
+    <link rel="stylesheet" href="style.css?v=20250911-2">
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body class="tutorial-body">
+    <!-- TUTORIAL PAGE - CLEAN ARCHITECTURE -->
+    <div id="tutorial-container">
+        <!-- Navigation Header -->
+        <div class="tutorial-nav-header">
+            <button id="back-to-game" class="nav-btn">🎮 Back to Game</button>
+            <h1 class="tutorial-page-title">📖 Tutorial: Shabbat Runner</h1>
+        </div>
+
+        <!-- Tutorial Screen 1 -->
+        <div id="tutorial-screen-1" class="tutorial-screen active">
+            <div class="tutorial-card">
+                <div class="tutorial-header">
+                    <div class="tutorial-progress">
+                        <span class="progress-dots">
+                            <span class="dot active"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="tutorial-content">
+                    <div class="tutorial-rabbi-area">
+                        <div class="animated-rabbi teaching">🧙‍♂️</div>
+                    </div>
+                    
+                    <div class="tutorial-text">
+                        <h3 class="tutorial-title">🌟 ДОБРО ПОЖАЛОВАТЬ!</h3>
+                        <div class="speech-bubble">
+                            <p>Шалом, дорогой! Я раввин Давид 🧙‍♂️<br>
+                            Обучаю Шаббату уже 40 лет — время летит быстрее лапши!<br>
+                            У тебя 45 секунд — как у меня на покупки в магазине 😄</p>
+                        </div>
+                    </div>
+                    
+                    <div class="shabbat-scene">
+                        <div class="synagogue">🕍</div>
+                        <div class="sunset-backdrop">
+                            <div class="sun">🌅</div>
+                            <div class="clouds">☁️ ☁️</div>
+                        </div>
+                    </div>
+                    
+                    <div class="tutorial-footer">
+                        <button id="tutorial-1-next" class="tutorial-btn">
+                            <span class="btn-icon">➡️</span>
+                            НАЧАТЬ ИЗУЧЕНИЕ
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tutorial Screen 2 -->
+        <div id="tutorial-screen-2" class="tutorial-screen hidden">
+            <div class="tutorial-card">
+                <div class="tutorial-header">
+                    <div class="tutorial-progress">
+                        <span class="progress-dots">
+                            <span class="dot"></span>
+                            <span class="dot active"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="tutorial-content">
+                    <div class="tutorial-rabbi-area">
+                        <div class="animated-rabbi explaining">🧙‍♂️</div>
+                    </div>
+                    
+                    <div class="tutorial-text">
+                        <h3 class="tutorial-title">🕯️ ЧТО ТАКОЕ ШАББАТ?</h3>
+                        <div class="speech-bubble">
+                            <p>Шаббат — это когда душа берёт выходной! 😊<br>
+                            3000 лет назад не было Instagram, а у нас был настоящий peace mode.<br>
+                            Представь: никаких уведомлений, только семья, вкусная еда и настоящее счастье!</p>
+                        </div>
+                    </div>
+                    
+                    <div class="shabbat-family-scene">
+                        <div class="family-table">
+                            <span class="family-member">👨‍👩‍👧‍👦</span>
+                            <span class="table-emoji">🍽️</span>
+                            <span class="candles-glow">🕯️✨🕯️</span>
+                        </div>
+                    </div>
+                    
+                    <div class="tutorial-footer">
+                        <button id="tutorial-2-next" class="tutorial-btn">
+                            <span class="btn-icon">➡️</span>
+                            ДАЛЕЕ
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tutorial Screen 3 -->
+        <div id="tutorial-screen-3" class="tutorial-screen hidden">
+            <div class="tutorial-card">
+                <div class="tutorial-header">
+                    <div class="tutorial-progress">
+                        <span class="progress-dots">
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot active"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="tutorial-content">
+                    <div class="tutorial-rabbi-area">
+                        <div class="animated-rabbi ready">🧙‍♂️</div>
+                    </div>
+                    
+                    <div class="tutorial-text">
+                        <h3 class="tutorial-title">📖 СИМВОЛИКА ПРЕДМЕТОВ</h3>
+                        <div class="speech-bubble">
+                            <p>Смотри, что у нас на праздничном столе! 🍽️<br>
+                            Каждый предмет рассказывает свою историю — нажми и послушай!</p>
+                        </div>
+                    </div>
+                    
+                    <div class="interactive-table">
+                        <div class="shabbat-table">
+                            <div class="table-item" data-item="candles">
+                                <span class="item-emoji">🕯️</span>
+                                <div class="item-glow"></div>
+                            </div>
+                            <div class="table-item" data-item="bread">
+                                <span class="item-emoji">🍞</span>
+                                <div class="item-glow"></div>
+                            </div>
+                            <div class="table-item" data-item="wine">
+                                <span class="item-emoji">🍷</span>
+                                <div class="item-glow"></div>
+                            </div>
+                            <div class="table-item" data-item="book">
+                                <span class="item-emoji">📖</span>
+                                <div class="item-glow"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- Overlay for better visibility -->
+                        <div id="description-overlay" class="description-overlay hidden">
+                            <div id="item-description" class="item-description">
+                                <div class="description-bubble">
+                                    <button id="close-description" class="close-btn" aria-label="Close" tabindex="0">✕</button>
+                                    <h4 id="item-title"></h4>
+                                    <p id="item-text"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tutorial-footer">
+                        <button id="tutorial-3-next" class="tutorial-btn disabled">
+                            <span class="btn-icon">➡️</span>
+                            ДАЛЕЕ
+                        </button>
+                        <p class="tutorial-hint">Нажмите на предмет, чтобы продолжить</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tutorial Screen 4 -->
+        <div id="tutorial-screen-4" class="tutorial-screen hidden">
+            <div class="tutorial-card">
+                <div class="tutorial-header">
+                    <div class="tutorial-progress">
+                        <span class="progress-dots">
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot active"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="tutorial-content">
+                    <div class="tutorial-rabbi-area">
+                        <div class="animated-rabbi excited">🧙‍♂️</div>
+                    </div>
+                    
+                    <div class="tutorial-text">
+                        <h3 class="tutorial-title">✅ ЧТО СОБИРАТЬ</h3>
+                        <div class="speech-bubble">
+                            <p>Вот настоящие сокровища Шаббата! ✨<br>
+                            Каждый клик по ним — как маленькое благословение. Собирай мудрость!</p>
+                        </div>
+                    </div>
+                    
+                    <div class="good-items-demo">
+                        <div class="items-grid">
+                            <div class="demo-item good-bounce">🕯️</div>
+                            <div class="demo-item good-bounce">🍞</div>
+                            <div class="demo-item good-bounce">🍷</div>
+                            <div class="demo-item good-bounce">📖</div>
+                            <div class="demo-item good-bounce">🌟</div>
+                            <div class="demo-item good-bounce">💎</div>
+                        </div>
+                        <div class="sparks-animation">✨ ✨ ✨</div>
+                    </div>
+                    
+                    <div class="tutorial-footer">
+                        <button id="tutorial-4-next" class="tutorial-btn">
+                            <span class="btn-icon">➡️</span>
+                            ДАЛЕЕ
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tutorial Screen 5 -->
+        <div id="tutorial-screen-5" class="tutorial-screen hidden">
+            <div class="tutorial-card">
+                <div class="tutorial-header">
+                    <div class="tutorial-progress">
+                        <span class="progress-dots">
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot active"></span>
+                            <span class="dot"></span>
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="tutorial-content">
+                    <div class="tutorial-rabbi-area">
+                        <div class="animated-rabbi disappointed">🧙‍♂️</div>
+                    </div>
+                    
+                    <div class="tutorial-text">
+                        <h3 class="tutorial-title">❌ ЧЕГО ИЗБЕГАТЬ</h3>
+                        <div class="speech-bubble">
+                            <p>А эти штуки — как будильник в субботу утром! 😅<br>
+                            Один клик и прощай покой... Лучше обходи их стороной, как я — диету.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bad-items-demo">
+                        <div class="items-grid">
+                            <div class="demo-item bad-shake">📱</div>
+                            <div class="demo-item bad-shake">💻</div>
+                            <div class="demo-item bad-shake">💡</div>
+                            <div class="demo-item bad-shake">💵</div>
+                            <div class="demo-item bad-shake">🚗</div>
+                            <div class="demo-item bad-shake">⚡</div>
+                        </div>
+                        <div class="warning-glow"></div>
+                    </div>
+                    
+                    <div class="tutorial-footer">
+                        <button id="tutorial-5-next" class="tutorial-btn">
+                            <span class="btn-icon">➡️</span>
+                            ДАЛЕЕ
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tutorial Screen 6 -->
+        <div id="tutorial-screen-6" class="tutorial-screen hidden">
+            <div class="tutorial-card">
+                <div class="tutorial-header">
+                    <div class="tutorial-progress">
+                        <span class="progress-dots">
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot active"></span>
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="tutorial-content">
+                    <div class="tutorial-rabbi-area">
+                        <div class="animated-rabbi encouraging">🧙‍♂️</div>
+                    </div>
+                    
+                    <div class="tutorial-text">
+                        <h3 class="tutorial-title">🎯 ПОПРОБУЙ!</h3>
+                        <div class="speech-bubble">
+                            <p>Поймай свечи, беги от телефонов — как в реальной жизни! 😄<br>
+                            Готов показать, что научился?</p>
+                        </div>
+                    </div>
+                    
+                    <div id="tutorial-demo-area" class="demo-game-area">
+                        <canvas id="tutorial-canvas" width="300" height="200"></canvas>
+                        <div class="demo-instructions">
+                            <p class="demo-hint">Нажми на падающие предметы!</p>
+                        </div>
+                    </div>
+                    
+                    <div class="tutorial-footer">
+                        <button id="tutorial-6-start" class="tutorial-btn tutorial-final">
+                            <span class="btn-icon">🚀</span>
+                            НАЧАТЬ ИГРУ
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tutorial JavaScript -->
+    <script>
+        // Tutorial Page JavaScript - CLEAN ARCHITECTURE
+        let currentScreen = 1;
+        const totalScreens = 6;
+        let currentLanguage = 'russian'; // Default language
+        let userId = null;
+        let username = 'unknown';
+
+        // Get language and user data from URL parameters or Telegram WebApp
+        function initializeLanguage() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const urlLang = urlParams.get('lang');
+            
+            // Extract user data from Telegram WebApp or URL
+            if (window.Telegram && window.Telegram.WebApp && window.Telegram.WebApp.initDataUnsafe?.user) {
+                const tgUser = window.Telegram.WebApp.initDataUnsafe.user;
+                userId = tgUser.id;
+                username = tgUser.username || 'unknown';
+                
+                // Also get language from Telegram
+                const langMapping = {
+                    'en': 'english',
+                    'english': 'english',
+                    'ru': 'russian', 
+                    'russian': 'russian',
+                    'he': 'hebrew',
+                    'hebrew': 'hebrew'
+                };
+                
+                if (urlLang && langMapping[urlLang.toLowerCase()]) {
+                    currentLanguage = langMapping[urlLang.toLowerCase()];
+                } else if (tgUser.language_code) {
+                    currentLanguage = langMapping[tgUser.language_code] || 'russian';
+                }
+                
+                console.log('🌍 Tutorial user:', userId, '@' + username, 'lang:', currentLanguage);
+            } else {
+                // Fallback to URL parameters
+                userId = urlParams.get('user_id') || Date.now();
+                username = urlParams.get('username') || 'unknown';
+                currentLanguage = urlLang || 'russian';
+            }
+        }
+
+        // Get localized content
+        function getLocalizedContent() {
+            return tutorialContent[currentLanguage] || tutorialContent.russian;
+        }
+
+        // Navigation between screens
+        function showTutorialScreen(screenNumber) {
+            // Hide all screens
+            for (let i = 1; i <= totalScreens; i++) {
+                const screen = document.getElementById(`tutorial-screen-${i}`);
+                if (screen) {
+                    screen.classList.add('hidden');
+                    screen.classList.remove('active');
+                }
+            }
+            
+            // Show target screen
+            const targetScreen = document.getElementById(`tutorial-screen-${screenNumber}`);
+            if (targetScreen) {
+                targetScreen.classList.remove('hidden');
+                targetScreen.classList.add('active');
+                currentScreen = screenNumber;
+            }
+            
+            // Start demo if on screen 6
+            if (screenNumber === 6) {
+                setTimeout(startTutorialDemo, 500);
+            }
+        }
+
+        // Multilingual Tutorial Content
+        const tutorialContent = {
+            russian: {
+                titles: {
+                    welcome: "🌟 ДОБРО ПОЖАЛОВАТЬ!",
+                    whatIsShabbat: "🕯️ ЧТО ТАКОЕ ШАББАТ?",
+                    symbols: "📖 СИМВОЛИКА ПРЕДМЕТОВ",
+                    goodItems: "✅ ЧТО СОБИРАТЬ",
+                    badItems: "❌ ЧЕГО ИЗБЕГАТЬ", 
+                    tryIt: "🎯 ПОПРОБУЙ!"
+                },
+                texts: {
+                    welcome: "Шалом, дорогой! Я раввин Давид 🧙‍♂️<br>Обучаю Шаббату уже 40 лет — время летит быстрее лапши!<br>У тебя 45 секунд — как у меня на покупки в магазине 😄",
+                    whatIsShabbat: "Шаббат — это когда душа берёт выходной! 😊<br>3000 лет назад не было Instagram, а у нас был настоящий peace mode.<br>Представь: никаких уведомлений, только семья, вкусная еда и настоящее счастье!",
+                    symbols: "Смотри, что у нас на праздничном столе! 🍽️<br>Каждый предмет рассказывает свою историю — нажми и послушай!",
+                    goodItems: "Вот настоящие сокровища Шаббата! ✨<br>Каждый клик по ним — как маленькое благословение. Собирай мудрость!",
+                    badItems: "А эти штуки — как будильник в субботу утром! 😅<br>Один клик и прощай покой... Лучше обходи их стороной, как я — диету.",
+                    tryIt: "Поймай свечи, беги от телефонов — как в реальной жизни! 😄<br>Готов показать, что научился?"
+                },
+                buttons: {
+                    start: "НАЧАТЬ ИЗУЧЕНИЕ",
+                    next: "ДАЛЕЕ",
+                    backToGame: "В ИГРУ",
+                    startGame: "НАЧАТЬ ИГРУ"
+                },
+                items: {
+                    candles: {
+                        title: "🕯️ Свечи Шаббата",
+                        text: "Зажигаются перед закатом в пятницу. Свет свечей символизирует мир и святость, которые приносит Шаббат в дом."
+                    },
+                    bread: {
+                        title: "🍞 Хала", 
+                        text: "Особый плетёный хлеб для Шаббата. Две халы символизируют двойную порцию манны, которую получали евреи в пустыне."
+                    },
+                    wine: {
+                        title: "🍷 Вино для Кидуша",
+                        text: "Благословение над вином освящает Шаббат. Кидуш — это особая молитва, которая отделяет святое время от будней."
+                    },
+                    book: {
+                        title: "📖 Сидур (молитвенник)",
+                        text: "Содержит особые молитвы и песни для Шаббата. В Шаббат читают Тору и поют традиционные песни (змирот)."
+                    }
+                }
+            },
+            english: {
+                titles: {
+                    welcome: "🌟 WELCOME!",
+                    whatIsShabbat: "🕯️ WHAT IS SHABBAT?",
+                    symbols: "📖 ITEM SYMBOLS",
+                    goodItems: "✅ WHAT TO COLLECT",
+                    badItems: "❌ WHAT TO AVOID",
+                    tryIt: "🎯 TRY IT!"
+                },
+                texts: {
+                    welcome: "Shalom, dear friend! I'm Rabbi David 🧙‍♂️<br>Been teaching Shabbat for 40 years — time flies faster than noodles!<br>You have 45 seconds — like me at the grocery store 😄",
+                    whatIsShabbat: "Shabbat is when your soul takes a day off! 😊<br>3000 years ago there was no Instagram, but we had real peace mode.<br>Imagine: no notifications, just family, delicious food and true happiness!",
+                    symbols: "Look what we have on our festive table! 🍽️<br>Each item tells its own story — click and listen!",
+                    goodItems: "Here are the real treasures of Shabbat! ✨<br>Every click on them is like a little blessing. Collect wisdom!",
+                    badItems: "And these things are like an alarm clock on Saturday morning! 😅<br>One click and goodbye peace... Better avoid them like I avoid diets.",
+                    tryIt: "Catch candles, run from phones — just like real life! 😄<br>Ready to show what you've learned?"
+                },
+                buttons: {
+                    start: "START LEARNING",
+                    next: "NEXT",
+                    backToGame: "BACK TO GAME",
+                    startGame: "START GAME"
+                },
+                items: {
+                    candles: {
+                        title: "🕯️ Shabbat Candles",
+                        text: "Lit before sunset on Friday. The light of candles symbolizes peace and holiness that Shabbat brings to the home."
+                    },
+                    bread: {
+                        title: "🍞 Challah",
+                        text: "Special braided bread for Shabbat. Two challahs symbolize the double portion of manna that Jews received in the desert."
+                    },
+                    wine: {
+                        title: "🍷 Kiddush Wine",
+                        text: "Blessing over wine sanctifies Shabbat. Kiddush is a special prayer that separates holy time from weekdays."
+                    },
+                    book: {
+                        title: "📖 Siddur (Prayer Book)",
+                        text: "Contains special prayers and songs for Shabbat. On Shabbat we read Torah and sing traditional songs (zemirot)."
+                    }
+                }
+            },
+            hebrew: {
+                titles: {
+                    welcome: "🌟 ברוכים הבאים!",
+                    whatIsShabbat: "🕯️ מה זה שבת?",
+                    symbols: "📖 סמלי הפריטים",
+                    goodItems: "✅ מה לאסוף",
+                    badItems: "❌ ממה להימנע",
+                    tryIt: "🎯 נסה זאת!"
+                },
+                texts: {
+                    welcome: "שלום, חבר יקר! אני הרב דוד 🧙‍♂️<br>מלמד שבת כבר 40 שנה — הזמן טס מהר יותר מאטריות!<br>יש לך 45 שניות — כמוני בסופר 😄",
+                    whatIsShabbat: "שבת זה כשהנשמה לוקחת יום חופש! 😊<br>לפני 3000 שנה לא היה אינסטגרם, אבל היה לנו מצב שלווה אמיתי.<br>תארו לעצמכם: בלי התראות, רק משפחה, אוכל טעים ואושר אמיתי!",
+                    symbols: "תראו מה יש לנו על השולחן החגיגי! 🍽️<br>כל פריט מספר את הסיפור שלו — לחצו והקשיבו!",
+                    goodItems: "הנה האוצרות האמיתיים של שבת! ✨<br>כל לחיצה עליהם זה כמו ברכה קטנה. אספו חכמה!",
+                    badItems: "והדברים האלה הם כמו שעון מעורר בבוקר שבת! 😅<br>לחיצה אחת ושלום על השלווה... עדיף להתרחק מהם כמוני מדיאטה.",
+                    tryIt: "תפסו נרות, ברחו מטלפונים — בדיוק כמו בחיים האמיתיים! 😄<br>מוכנים להראות מה למדתם?"
+                },
+                buttons: {
+                    start: "התחל לימוד",
+                    next: "הבא",
+                    backToGame: "חזרה למשחק",
+                    startGame: "התחל משחק"
+                },
+                items: {
+                    candles: {
+                        title: "🕯️ נרות שבת",
+                        text: "נדלקים לפני שקיעת החמה בערב שבת. אור הנרות מסמל שלום וקדושה שהשבת מביאה לבית."
+                    },
+                    bread: {
+                        title: "🍞 חלה",
+                        text: "לחם קלוע מיוחד לשבת. שתי החלות מסמלות את המנה הכפולה של המן שקיבלו היהודים במדבר."
+                    },
+                    wine: {
+                        title: "🍷 יין קידוש",
+                        text: "ברכה על היין מקדשת את השבת. קידוש היא תפילה מיוחדת המפרידה בין זמן קדוש לימי החול."
+                    },
+                    book: {
+                        title: "📖 סידור (ספר תפילה)",
+                        text: "מכיל תפילות ושירים מיוחדים לשבת. בשבת קוראים בתורה ושרים שירים מסורתיים (זמירות)."
+                    }
+                }
+            }
+        };
+
+        // Update all UI text based on current language
+        function updateUILanguage() {
+            const content = getLocalizedContent();
+            
+            // Update all tutorial titles and texts
+            const updates = [
+                { screen: 1, titleKey: 'welcome', textKey: 'welcome' },
+                { screen: 2, titleKey: 'whatIsShabbat', textKey: 'whatIsShabbat' },
+                { screen: 3, titleKey: 'symbols', textKey: 'symbols' },
+                { screen: 4, titleKey: 'goodItems', textKey: 'goodItems' },
+                { screen: 5, titleKey: 'badItems', textKey: 'badItems' },
+                { screen: 6, titleKey: 'tryIt', textKey: 'tryIt' }
+            ];
+            
+            updates.forEach(({ screen, titleKey, textKey }) => {
+                const titleEl = document.querySelector(`#tutorial-screen-${screen} .tutorial-title`);
+                const textEl = document.querySelector(`#tutorial-screen-${screen} .speech-bubble p`);
+                
+                if (titleEl && content.titles[titleKey]) {
+                    titleEl.innerHTML = content.titles[titleKey];
+                }
+                if (textEl && content.texts[textKey]) {
+                    textEl.innerHTML = content.texts[textKey];
+                }
+            });
+
+            // Update button texts
+            if (content.buttons) {
+                // Update specific buttons by ID
+                const buttonUpdates = [
+                    { id: 'tutorial-1-next', icon: '➡️', textKey: 'start' },
+                    { id: 'tutorial-2-next', icon: '➡️', textKey: 'next' },
+                    { id: 'tutorial-3-next', icon: '➡️', textKey: 'next' },
+                    { id: 'tutorial-4-next', icon: '➡️', textKey: 'next' },
+                    { id: 'tutorial-5-next', icon: '➡️', textKey: 'next' },
+                    { id: 'tutorial-6-start', icon: '🎮', textKey: 'startGame' },
+                    { id: 'back-to-game', icon: '🎮', textKey: 'backToGame' }
+                ];
+
+                buttonUpdates.forEach(({ id, icon, textKey }) => {
+                    const btn = document.getElementById(id);
+                    if (btn && content.buttons[textKey]) {
+                        btn.innerHTML = `<span class="btn-icon">${icon}</span> ${content.buttons[textKey]}`;
+                    }
+                });
+            }
+        }
+
+        // Interactive table functionality
+        function setupInteractiveTable() {
+            document.querySelectorAll('.table-item').forEach(item => {
+                item.addEventListener('click', function() {
+                    const itemType = this.dataset.item;
+                    const content = getLocalizedContent();
+                    const itemContent = content.items[itemType];
+                    
+                    if (itemContent) {
+                        // Show description
+                        const overlayDiv = document.getElementById('description-overlay');
+                        const titleEl = document.getElementById('item-title');
+                        const textEl = document.getElementById('item-text');
+                        
+                        titleEl.textContent = itemContent.title;
+                        textEl.textContent = itemContent.text;
+                        overlayDiv.classList.remove('hidden');
+                        
+                        // Enable next button
+                        const nextBtn = document.getElementById('tutorial-3-next');
+                        nextBtn.classList.remove('disabled');
+                        
+                        // Add selected effect
+                        document.querySelectorAll('.table-item').forEach(i => i.classList.remove('selected'));
+                        this.classList.add('selected');
+                    }
+                });
+            });
+        }
+
+        // Tutorial demo functionality with ENHANCED VISUAL EFFECTS
+        function startTutorialDemo() {
+            const canvas = document.getElementById('tutorial-canvas');
+            if (!canvas) return;
+            
+            const ctx = canvas.getContext('2d');
+            let demoObjects = [];
+            let demoRunning = true;
+            let demoEffects = []; // Array for visual effects
+            
+            // Create demo objects
+            setTimeout(() => {
+                demoObjects.push({
+                    x: 50,
+                    y: 20,
+                    emoji: '🕯️',
+                    speed: 1,
+                    isGood: true,
+                    size: 20,
+                    scaleAnimation: null,
+                    originalEmoji: '🕯️'
+                });
+                demoObjects.push({
+                    x: 150,
+                    y: 40,
+                    emoji: '📱',
+                    speed: 1.2,
+                    isGood: false,
+                    size: 20,
+                    scaleAnimation: null,
+                    originalEmoji: '📱'
+                });
+            }, 500);
+            
+            // Enhanced demo animation loop with VISUAL EFFECTS
+            function animateDemo() {
+                if (!demoRunning) return;
+                
+                // Clear canvas
+                ctx.fillStyle = '#1a1a2e';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                
+                // Update and draw objects with ANIMATIONS
+                demoObjects.forEach(obj => {
+                    obj.y += obj.speed;
+                    
+                    // Handle scale animation like in main game
+                    let currentScale = 1.0;
+                    let currentRotation = 0;
+                    
+                    if (obj.scaleAnimation) {
+                        const progress = 1 - (obj.scaleAnimation.timer / 300); // 300ms animation
+                        
+                        if (obj.scaleAnimation.direction === 1) {
+                            // Good item: 1.0 → 1.4 → 1.0 (more dramatic for tutorial)
+                            if (progress < 0.5) {
+                                currentScale = 1.0 + (progress * 2) * 0.4;
+                            } else {
+                                currentScale = 1.4 - ((progress - 0.5) * 2) * 0.4;
+                            }
+                        } else {
+                            // Bad item: shake and squash
+                            if (progress < 0.5) {
+                                currentScale = 1.0 - (progress * 2) * 0.3;
+                                currentRotation = (Math.random() - 0.5) * 0.4; // More shake
+                            } else {
+                                currentScale = 0.7 + ((progress - 0.5) * 2) * 0.3;
+                                currentRotation = (Math.random() - 0.5) * 0.2;
+                            }
+                        }
+                        
+                        obj.scaleAnimation.timer -= 16;
+                        if (obj.scaleAnimation.timer <= 0) {
+                            obj.scaleAnimation = null;
+                            obj.emoji = obj.originalEmoji; // Reset emoji
+                        }
+                    }
+                    
+                    // Draw with glow effect for good items
+                    ctx.save();
+                    ctx.translate(obj.x + obj.size/2, obj.y + obj.size/2);
+                    ctx.rotate(currentRotation);
+                    ctx.scale(currentScale, currentScale);
+                    
+                    if (obj.isGood) {
+                        // Golden glow for candles
+                        ctx.shadowColor = '#FFD700';
+                        ctx.shadowBlur = 10 * currentScale;
+                        ctx.font = `${obj.size}px Arial`;
+                        ctx.fillText(obj.emoji, -obj.size/2, obj.size/4);
+                    } else {
+                        // Red glow for forbidden items
+                        ctx.shadowColor = '#FF4444';
+                        ctx.shadowBlur = 8 * currentScale;
+                        ctx.font = `${obj.size}px Arial`;
+                        ctx.fillText(obj.emoji, -obj.size/2, obj.size/4);
+                    }
+                    
+                    ctx.restore();
+                    
+                    // Reset position when off screen
+                    if (obj.y > canvas.height + 20) {
+                        obj.y = -20;
+                        obj.emoji = obj.originalEmoji;
+                        obj.scaleAnimation = null;
+                    }
+                });
+                
+                // Draw particle effects
+                updateDemoEffects();
+                
+                requestAnimationFrame(animateDemo);
+            }
+            
+            animateDemo();
+            
+            // Enhanced particle effect system for tutorial demo
+            function createDemoSpark(x, y, isGood) {
+                for (let i = 0; i < 8; i++) {
+                    demoEffects.push({
+                        x: x,
+                        y: y,
+                        vx: (Math.random() - 0.5) * 4,
+                        vy: (Math.random() - 0.5) * 4,
+                        life: 30,
+                        maxLife: 30,
+                        color: isGood ? '#FFD700' : '#FF4444',
+                        size: Math.random() * 3 + 2
+                    });
+                }
+            }
+            
+            function updateDemoEffects() {
+                for (let i = demoEffects.length - 1; i >= 0; i--) {
+                    const effect = demoEffects[i];
+                    
+                    effect.x += effect.vx;
+                    effect.y += effect.vy;
+                    effect.life--;
+                    
+                    const alpha = effect.life / effect.maxLife;
+                    
+                    ctx.save();
+                    ctx.globalAlpha = alpha;
+                    ctx.fillStyle = effect.color;
+                    ctx.beginPath();
+                    ctx.arc(effect.x, effect.y, effect.size * alpha, 0, Math.PI * 2);
+                    ctx.fill();
+                    ctx.restore();
+                    
+                    if (effect.life <= 0) {
+                        demoEffects.splice(i, 1);
+                    }
+                }
+            }
+            
+            // Enhanced canvas click handling with VISUAL EFFECTS
+            canvas.addEventListener('click', function(e) {
+                const rect = canvas.getBoundingClientRect();
+                const clickX = e.clientX - rect.left;
+                const clickY = e.clientY - rect.top;
+                
+                demoObjects.forEach(obj => {
+                    const distance = Math.sqrt((clickX - (obj.x + obj.size/2))**2 + (clickY - (obj.y + obj.size/2))**2);
+                    if (distance < 30 && !obj.scaleAnimation) { // Prevent double-clicks
+                        
+                        if (obj.isGood) {
+                            // GOOD ITEM: Spark effect + scale animation
+                            createDemoSpark(obj.x + obj.size/2, obj.y + obj.size/2, true);
+                            obj.scaleAnimation = { timer: 300, direction: 1 };
+                            obj.emoji = '✨'; // Change to sparkle during animation
+                            
+                            // Add floating "+2" text effect
+                            demoEffects.push({
+                                x: obj.x + obj.size/2,
+                                y: obj.y,
+                                vx: 0,
+                                vy: -2,
+                                life: 40,
+                                maxLife: 40,
+                                text: '+2',
+                                color: '#00FF00',
+                                size: 16
+                            });
+                            
+                        } else {
+                            // BAD ITEM: Blast effect + shake animation
+                            createDemoSpark(obj.x + obj.size/2, obj.y + obj.size/2, false);
+                            obj.scaleAnimation = { timer: 300, direction: -1 };
+                            obj.emoji = '💥'; // Change to explosion during animation
+                            
+                            // Add floating "-1" text effect
+                            demoEffects.push({
+                                x: obj.x + obj.size/2,
+                                y: obj.y,
+                                vx: 0,
+                                vy: -2,
+                                life: 40,
+                                maxLife: 40,
+                                text: '-1',
+                                color: '#FF4444',
+                                size: 16
+                            });
+                        }
+                        
+                        // Reset object position after a delay
+                        setTimeout(() => {
+                            obj.y = -20;
+                        }, 300);
+                    }
+                });
+                
+                // Draw floating text in updateDemoEffects
+                demoEffects.forEach(effect => {
+                    if (effect.text) {
+                        const alpha = effect.life / effect.maxLife;
+                        ctx.save();
+                        ctx.globalAlpha = alpha;
+                        ctx.fillStyle = effect.color;
+                        ctx.font = `bold ${effect.size}px Arial`;
+                        ctx.textAlign = 'center';
+                        ctx.fillText(effect.text, effect.x, effect.y);
+                        ctx.restore();
+                    }
+                });
+            });
+        }
+
+        // Setup event listeners
+        function setupEventListeners() {
+            // Navigation buttons
+            const navButtons = [
+                { id: 'tutorial-1-next', action: () => showTutorialScreen(2) },
+                { id: 'tutorial-2-next', action: () => showTutorialScreen(3) },
+                { id: 'tutorial-3-next', action: () => showTutorialScreen(4) },
+                { id: 'tutorial-4-next', action: () => showTutorialScreen(5) },
+                { id: 'tutorial-5-next', action: () => showTutorialScreen(6) },
+                { id: 'tutorial-6-start', action: async () => {
+                    // Calculate tutorial duration
+                    const tutorialDuration = tutorialStartTime ? (Date.now() - tutorialStartTime) / 1000 : 0;
+                    
+                    // Send TUTORIAL_COMPLETED analytics before marking as seen
+                    await sendAnalyticsEvent('TUTORIAL_COMPLETED', {
+                        duration: tutorialDuration,
+                        completed: true,
+                        timestamp: new Date().toISOString()
+                    });
+                    
+                    // Mark tutorial as completed and go to game with autostart
+                    localStorage.setItem('shabbat-tutorial-seen', 'true');
+                    
+                    // Small delay to ensure analytics is sent
+                    setTimeout(() => {
+                        window.location.href = '/game?autostart=true&from_tutorial=true';
+                    }, 500);
+                }}
+            ];
+
+            navButtons.forEach(({ id, action }) => {
+                const button = document.getElementById(id);
+                if (button) {
+                    button.addEventListener('click', action);
+                }
+            });
+
+            // Back to game button - FIXED: Start game directly 
+            const backButton = document.getElementById('back-to-game');
+            if (backButton) {
+                backButton.addEventListener('click', () => {
+                    window.location.href = '/game?autostart=true'; // Add autostart parameter
+                });
+            }
+
+            // Close description overlay with accessibility support
+            const closeBtn = document.getElementById('close-description');
+            if (closeBtn) {
+                // Click handler
+                closeBtn.addEventListener('click', () => {
+                    const overlayDiv = document.getElementById('description-overlay');
+                    overlayDiv.classList.add('hidden');
+                });
+                
+                // Keyboard support (Enter/Space)
+                closeBtn.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        const overlayDiv = document.getElementById('description-overlay');
+                        overlayDiv.classList.add('hidden');
+                    }
+                });
+            }
+
+            // Also close on overlay click
+            const overlayDiv = document.getElementById('description-overlay');
+            if (overlayDiv) {
+                overlayDiv.addEventListener('click', (e) => {
+                    if (e.target === overlayDiv) {
+                        overlayDiv.classList.add('hidden');
+                    }
+                });
+            }
+        }
+
+        // ========== ANALYTICS FUNCTIONS ==========
+        
+        let tutorialStartTime = null;
+        
+        // Send analytics to server
+        async function sendAnalyticsEvent(eventType, eventData = {}) {
+            try {
+                // Use globally initialized user data from Telegram WebApp
+                const userData = {
+                    user_id: userId || Date.now(),
+                    username: username || 'unknown',
+                    language: currentLanguage || 'russian'
+                };
+                
+                const analyticsData = {
+                    event_type: eventType,
+                    ...userData,
+                    ...eventData
+                };
+                
+                const response = await fetch('/api/game-analytics', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(analyticsData)
+                });
+                
+                if (response.ok) {
+                    console.log(`📊 Analytics sent: ${eventType}`);
+                } else {
+                    console.warn(`⚠️ Analytics failed: ${eventType}`);
+                }
+            } catch (error) {
+                console.warn(`⚠️ Analytics error: ${error.message}`);
+            }
+        }
+        
+        // Check if this is first-time tutorial
+        function isFirstTimeTutorial() {
+            return !localStorage.getItem('shabbat-tutorial-seen');
+        }
+
+        // Initialize tutorial page
+        function initializeTutorial() {
+            // Record tutorial start time
+            tutorialStartTime = Date.now();
+            
+            // Initialize language first
+            initializeLanguage();
+            
+            // Update UI with correct language
+            updateUILanguage();
+            
+            // Setup event listeners and interactions
+            setupEventListeners();
+            setupInteractiveTable();
+            
+            // Show first screen
+            showTutorialScreen(1);
+            
+            // Send TUTORIAL_STARTED analytics
+            sendAnalyticsEvent('TUTORIAL_STARTED', {
+                first_time: isFirstTimeTutorial(),
+                timestamp: new Date().toISOString()
+            });
+            
+            // Telegram WebApp optimizations
+            if (window.Telegram && window.Telegram.WebApp) {
+                window.Telegram.WebApp.ready();
+                window.Telegram.WebApp.expand();
+            }
+        }
+
+        // Start when DOM is ready
+        document.addEventListener('DOMContentLoaded', initializeTutorial);
+    </script>
+</body>
+</html>

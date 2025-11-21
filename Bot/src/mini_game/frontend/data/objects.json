@@ -1,0 +1,14 @@
+{
+  "allowed": [
+    {"id": "candles", "label": "Shabbat Candles", "points": 1, "emoji": "🕯️"},
+    {"id": "challah", "label": "Challah", "points": 1, "emoji": "🍞"},
+    {"id": "kiddush", "label": "Kiddush Cup", "points": 1, "emoji": "🍷"},
+    {"id": "siddur", "label": "Siddur", "points": 1, "emoji": "📖"}
+  ],
+  "forbidden": [
+    {"id": "phone", "label": "Phone", "damage": 1, "emoji": "📱"},
+    {"id": "money", "label": "Money", "damage": 1, "emoji": "💵"},
+    {"id": "lamp", "label": "Switch Lamp", "damage": 1, "emoji": "💡"},
+    {"id": "laptop", "label": "Laptop", "damage": 1, "emoji": "💻"}
+  ]
+}

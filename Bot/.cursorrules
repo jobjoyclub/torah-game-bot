@@ -1,0 +1,159 @@
+# Torah Bot - Cursor AI Rules
+
+## Project Overview
+Production-ready Python Telegram bot providing AI-powered educational content focused on Torah and Talmud. Deployed on Replit Autoscale with webhook architecture.
+
+## Core Technologies
+- **Backend**: Python 3.11, FastAPI, Uvicorn
+- **Database**: PostgreSQL 16 (via asyncpg)
+- **AI**: OpenAI GPT-4o/GPT-5, DALL-E 3
+- **Telegram**: Bot API (webhook mode)
+- **Frontend**: Vanilla JS (Mini Game)
+- **Deployment**: Production autoscale (webhook-based)
+
+## Architecture Patterns
+
+### 1. Service Container Pattern
+- All services initialized via `ServiceContainer` (src/core/service_container.py)
+- Dependency injection for telegram_client, newsletter_manager, admin_commands
+- Single source of truth for service instances
+
+### 2. Webhook Architecture
+- Entry point: `unified_webhook_service.py`
+- Production URL: https://torah-project-jobjoyclub.replit.app
+- Auto-subscription at webhook boundary
+- UserContext extracted from Telegram updates
+
+### 3. Database Patterns
+- **Connection pooling**: asyncpg pools with context managers
+- **Advisory locks**: For broadcast deduplication (src/core/db_advisory_locks.py)
+- **Audit logging**: Enterprise-grade tracking (src/core/audit_logger.py)
+- **Safe migrations**: NEVER alter ID column types
+
+### 4. Error Handling
+- Use specific exceptions (httpx.HTTPError, ValueError, asyncpg.PostgresError)
+- Include exception type in logs: `logger.error(f"Error ({type(e).__name__}): {e}", exc_info=True)`
+- Return safe fallback values in exception handlers
+- Centralized error handling via ErrorHandlerRegistry
+
+## Code Guidelines
+
+### DO ✅
+- Use async/await for all I/O operations
+- Context managers for database connections (`async with pool.acquire() as conn`)
+- Type hints for all function parameters
+- Structured logging with context
+- Rate limiting middleware for security
+- Environment variables for configuration
+- Graceful shutdown handlers
+
+### DON'T ❌
+- Broad `except Exception` without logging type
+- Hardcoded API keys or secrets
+- Direct database connections without pooling
+- Blocking operations in async functions
+- Changes to existing ID column types
+- Mock/placeholder data in production paths
+
+## File Structure
+```
+src/
+├── core/              # Core infrastructure
+│   ├── service_container.py  # DI container
+│   ├── audit_logger.py       # Security logging
+│   ├── rate_limiter.py       # DDoS protection
+│   └── error_handling.py     # Centralized errors
+├── torah_bot/         # Main bot logic
+│   ├── simple_bot.py         # Bot core
+│   ├── admin_commands.py     # Admin features
+│   └── newsletter_manager.py # Newsletter system
+├── newsletter_api/    # Internal newsletter API
+├── mini_game/         # Telegram Mini App
+└── database/          # DB utilities
+
+unified_webhook_service.py  # Production entry point
+```
+
+## Security Rules
+- All secrets in environment variables
+- CORS restricted to Telegram domains
+- Webhook authentication via BOT_TOKEN verification
+- Admin commands gated by permissions
+- httpx logging reduced to WARNING level
+
+## Database Safety
+- Use `npm run db:push` for schema changes (NO manual SQL migrations)
+- Check existing schema before modifications
+- Preserve ID column types (serial stays serial, varchar stays varchar)
+- Use advisory locks for critical sections
+
+## Testing
+- Run tests: `pytest tests/`
+- Health check: GET /health
+- Admin test commands: /send_test_now, /send_test_quiz
+- Newsletter API tests: /run_api_tests
+
+## Performance Patterns
+- Parallel processing for AI + images
+- Connection pooling (asyncpg)
+- Smart caching for preset images
+- Webhook-based autoscale (scale-to-zero)
+
+## Production Deployment
+- Deployment: Replit Autoscale
+- Mode: Webhook (not polling)
+- Port: 5000 (bound to 0.0.0.0)
+- Health monitoring: /health endpoint
+- Scheduler: Internal with external wake-up
+
+## Common Tasks
+
+### Add new admin command:
+1. Add handler in `src/torah_bot/admin_commands.py`
+2. Register in `handle_admin_command()` switch
+3. Add to help text in `_show_admin_help()`
+4. Add route in `simple_bot.py` message handler
+
+### Add new broadcast type:
+1. Create generator in `src/torah_bot/` (e.g., quiz_topics.py)
+2. Add to `newsletter_api/service.py`
+3. Update deduplication logic
+4. Add scheduler entry if needed
+
+### Database query:
+```python
+async with self.db_pool.acquire() as conn:
+    result = await conn.fetch("SELECT * FROM users WHERE id = $1", user_id)
+```
+
+## AI Integration
+- Primary: GPT-4o (fallback: GPT-3.5-turbo)
+- Image: DALL-E 3 (fallback chain: standard → built-in)
+- Prompts: Externalized in `src/torah_bot/prompts/`
+- Hot reload: PromptLoader watches file changes
+
+## Multilingual Support
+Languages: English, Russian, Hebrew, Spanish, French, German, Italian, Portuguese, Arabic
+- Auto-detection from Telegram user language_code
+- Consistent UI elements across languages
+- Language mapping in UserContext
+
+## Key Environment Variables
+See .env.example for full documentation
+
+## When Making Changes
+1. Read relevant files first (don't hallucinate code)
+2. Check LSP diagnostics after edits
+3. Test with workflow restart
+4. Use architect tool for code review
+5. Update replit.md for significant changes
+6. Maintain backward compatibility
+
+## Contact & Support
+- Production logs: Check TorahLogs chat (TORAH_LOGS_CHAT_ID)
+- Admin commands: /newsletter_help
+- Database: PostgreSQL via DATABASE_URL
+- Monitoring: /api/scheduler_status
+
+---
+Last updated: October 16, 2025

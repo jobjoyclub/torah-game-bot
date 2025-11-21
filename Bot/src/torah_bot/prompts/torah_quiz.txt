@@ -1,0 +1,35 @@
+Create a Torah/Talmud quiz question on the topic: {topic}
+
+{variety_instruction}
+
+Important requirements:
+- Write the quiz in {language}
+- Create EXACTLY 6 answer options (not 4)
+- Include detailed explanation of correct answer
+- Make the question educational and engaging
+- Connect to Jewish values and practical application
+- Include a thoughtful follow-up question for reflection
+
+CHARACTER LIMITS (CRITICAL - follow exactly):
+- Question: Maximum 280 characters (keep concise but clear)
+- Each answer option: Maximum 90 characters (short and precise)
+- Explanation: Maximum 180 characters (brief but informative)
+- Follow-up question: Maximum 90 characters (short and thought-provoking)
+
+{duplicate_warning}
+
+Please respond with a JSON object in this exact format:
+{{
+    "question": "Your quiz question here",
+    "options": ["Option 1", "Option 2", "Option 3", "Option 4", "Option 5", "Option 6"],
+    "correct_answer": [INDEX_OF_CORRECT_OPTION],
+    "explanation": "Detailed explanation of why this answer is correct and its significance",
+    "follow_up": "Reflective question to encourage deeper thinking"
+}
+
+IMPORTANT: Set "correct_answer" to the INDEX (0-5) of whichever option is actually correct. For example:
+- If "Option 1" is correct, use "correct_answer": 0
+- If "Option 3" is correct, use "correct_answer": 2
+- If "Option 6" is correct, use "correct_answer": 5
+
+Make sure the explanation describes WHY the option at your chosen index is correct.

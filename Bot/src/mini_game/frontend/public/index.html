@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shabbat Runner: Kedusha Path</title>
+    <link rel="stylesheet" href="style.css?v=20250911-2">
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+    <div id="game-container">
+        <canvas id="game-canvas"></canvas>
+        
+        <div id="game-ui">
+            <div id="hud">
+                <div id="score">Score: 0</div>
+                <div id="lives">Lives: ❤️❤️❤️</div>
+                <div id="timer">Time: 45</div>
+            </div>
+            
+            <div id="instructions" class="overlay">
+                <div class="welcome-logo">
+                    <div class="retro-title">SHABBAT RUNNER</div>
+                    <div class="retro-subtitle">✨ KEDUSHA PATH ✨</div>
+                    <div class="animated-candles">
+                        <span class="candle">🕯️</span>
+                        <span class="candle">🕯️</span>
+                        <span class="candle">🕯️</span>
+                    </div>
+                </div>
+                
+                <div class="game-preview">
+                    <div class="preview-items">
+                        <span class="good-item">🕯️</span>
+                        <span class="good-item">🍞</span>
+                        <span class="good-item">🍷</span>
+                        <span class="good-item">📖</span>
+                    </div>
+                    <div class="vs-text">VS</div>
+                    <div class="preview-items">
+                        <span class="bad-item">📱</span>
+                        <span class="bad-item">💵</span>
+                        <span class="bad-item">💡</span>
+                        <span class="bad-item">💻</span>
+                    </div>
+                </div>
+                
+                <div class="instructions-text">
+                    <p><strong>🎯 TAP</strong> to collect holy items</p>
+                    <p><strong>⚠️ AVOID</strong> forbidden objects</p>
+                    <p><strong>⏱️ 45 SECONDS</strong> to prepare for Shabbat!</p>
+                </div>
+                
+                <div class="torah-scroll-button">
+                    <button id="start-btn">
+                        <span class="scroll-icon">📜</span>
+                        BEGIN SHABBAT PATH
+                        <span class="scroll-icon">📜</span>
+                    </button>
+                    <button id="replay-tutorial-btn" class="tutorial-replay-btn">
+                        <span class="scroll-icon">📖</span>
+                        REPLAY TUTORIAL
+                        <span class="scroll-icon">📖</span>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Tutorial removed - now available at /tutorial -->
+            <!-- Tutorial functionality moved to /tutorial page -->
+
+            <div id="game-over" class="overlay hidden">
+                <button id="game-over-close" class="game-over-close-btn">✕</button>
+                <div class="end-screen-header">
+                    <div class="waving-rabbi">🧙‍♂️</div>
+                    <h2>🏆 Shabbat Shalom! 🏆</h2>
+                </div>
+                
+                <div class="score-display">
+                    <div class="score-circle">
+                        <span id="final-score">0</span>
+                        <div class="score-label">HOLY SPARKS</div>
+                    </div>
+                </div>
+                
+                <div class="end-message">
+                    <p id="game-message"></p>
+                </div>
+                
+                <div class="end-buttons">
+                    <!-- Top row: Share + Play Again inline -->
+                    <div class="buttons-row inline-row">
+                        <button id="share-telegram" class="share-btn compact">
+                            <span class="btn-icon">📢</span>
+                            SHARE SCORE
+                        </button>
+                        <button id="play-again" class="play-again-btn compact">
+                            <span class="btn-icon">🔄</span>
+                            PLAY AGAIN
+                        </button>
+                    </div>
+                    
+                    <!-- Bottom row: Replay Tutorial full width -->
+                    <div class="buttons-row single-row">
+                        <button id="replay-tutorial-end" class="tutorial-btn full-width">
+                            <span class="btn-icon">📖</span>
+                            REPLAY TUTORIAL
+                            <span class="btn-icon">📖</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="game.js?v=20250911-1"></script>
+</body>
+</html>
